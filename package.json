@@ -1,0 +1,23 @@
+{
+  "name": "teamgif",
+  "version": "1.0.0",
+  "description": "TeamGif App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuicpet/TeamGif.git"
+  },
+  "keywords": [
+    "gif",
+    "team"
+  ],
+  "author": "kingsley Umujeyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuicpet/TeamGif/issues"
+  },
+  "homepage": "https://github.com/kuicpet/TeamGif#readme"
+}
