@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/kuicpet/TeamGif/badge.png?branch=master)](https://coveralls.io/github/kuicpet/TeamGif?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/kuicpet/TeamGif/badge.svg?branch=master)](https://coveralls.io/github/kuicpet/TeamGif?branch=master)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 # TeamGif
