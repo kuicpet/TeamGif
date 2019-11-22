@@ -5,6 +5,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const pg = require('pg');
+const router = require('./routes');
 
 // express app
 const app = express();
@@ -20,6 +22,7 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
 });
+
 
 /* Create user account */
 // eslint-disable-next-line consistent-return
