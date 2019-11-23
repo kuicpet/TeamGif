@@ -5,7 +5,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
-const pg = require('pg');
 const router = require('./routes');
 
 // express app
@@ -24,9 +23,10 @@ app.use((req, res, next) => {
 });
 
 
+app.use('/', router);
 /* Create user account */
 // eslint-disable-next-line consistent-return
-app.post('/auth/create-user', (req, res, next) => {
+/*app.post('/auth/create-user', (req, res, next) => {
   // eslint-disable-next-line max-len
   if (!req.body.firstname || !req.body.lastname || !req.body.email 
     || !req.body.password || !req.body.gender || !req.body.job_role 
@@ -83,7 +83,7 @@ function verifyToken(req, res, next) {
 }
 // Get token on sign in
 
-/* Login a user */
+/* Login a user 
 // eslint-disable-next-line consistent-return
 app.post('/auth/signin', (req, res, next) => {
   // user
@@ -110,7 +110,7 @@ app.post('/auth/signin/test', (req, res, next) => {
   res.status(400).send({ message: 'This an error response' });
   next();
 });
-/* Create a gif */
+/* Create a gif 
 app.post('/gifs', verifyToken, (req, res, next) => {
   // eslint-disable-next-line no-unused-vars
   jwt.verify(req.token, 'secretKey', (err, _authData) => {
@@ -134,7 +134,7 @@ app.post('/gifs/test', (req, res, next) => {
   res.status(400).send({ message: 'This an error response' });
   next();
 });
-/* Create an article */
+/* Create an article 
 app.post('/articles', verifyToken, (req, res, next) => {
   jwt.verify(req.token, 'secretKey', (err, authData) => {
     if (!req.token || !req.body.articleTitle || !req.body.article) {
@@ -155,7 +155,7 @@ app.post('/articles', verifyToken, (req, res, next) => {
 app.post('/articles/test', (req, res, next) => {
   res.status(404).send({ message: 'This an error response' });
 });
-/* Edit an article */
+/* Edit an article 
 app.patch('/articles/articleId', (req, res, next) => {
   // eslint-disable-next-line no-unused-vars
   jwt.verify(req.token, 'secretKey', (err, _authData) => {
@@ -176,7 +176,7 @@ app.patch('/articles/articleId', (req, res, next) => {
 app.patch('/articles/articleId/test', (req, res, next) => {
   res.status(500).send({ message: 'This an error response' });
 });
-/* Employees can delete their articles */
+/* Employees can delete their articles 
 app.delete('/articles/articleId', (req, res, next) => {
   jwt.verify(req.token, 'secretKey', (err, authData) => {
     if (!req.token) {
@@ -196,7 +196,7 @@ app.delete('/articles/articleId', (req, res, next) => {
 app.delete('/articles/articleId/test', (req, res, next) => {
   res.status(500).send({ message: 'This an error response' });
 });
-/* Employees can delete their gifs */
+/* Employees can delete their gifs 
 app.delete('/gifs/gifId', (req, res, next) => {
   jwt.verify(req.token, 'secretKey', (err, authData) => {     
     if (err) {
@@ -216,7 +216,7 @@ app.delete('/gifs/gifId', (req, res, next) => {
 app.delete('/gifs/gifId/test', (req, res, next) => {
   res.status(500).send({ message: 'This an error response' });
 });
-/* Employees can comment on other colleagues' article post */
+/* Employees can comment on other colleagues' article post 
 app.post('/articles/articleId/comment', (req, res, next) => {
   jwt.verify(req.token, 'secretKey', (err, authData) => {
     if (!req.token) {
@@ -241,7 +241,7 @@ app.post('/articles/articleId/comment', (req, res, next) => {
 app.post('/articles/articleId/comment/test', (req, res, next) => {
   res.status(500).send({ message: 'This an error response' });
 });
-/* Employees can comment on other colleagues' gif post */
+/* Employees can comment on other colleagues' gif post 
 app.post('/gifs/gifId/comment', (req, res, next) => {
   jwt.verify(req.token, 'secretKey', (err, authData) => {
     if (err) {
@@ -267,7 +267,7 @@ app.post('/gifs/gifId/comment/test', (req, res, next) => {
   res.status(500).send({ message: 'This an error response' });
 });
 /* Employees can view all articles or gifs, showing the most recently posted articles
-or gifs first */
+or gifs first 
 app.get('/feed', (req, res, next) => {
   jwt.verify(req.token, 'secretKey', (err, authData) => {
     if (err) {
@@ -305,7 +305,7 @@ app.get('/feed', (req, res, next) => {
 app.get('/feed/test', (req, res, next) => {
   res.status(500).send({ message: 'This an error response' });
 });
-/* Employees can view a specific article. */
+/* Employees can view a specific article. 
 app.get('/articles/articleId', (req, res, next) => {
   jwt.verify(req.token, 'secretKey', (err, authData) => {
     if (err) {
@@ -338,7 +338,7 @@ app.get('/articles/articleId', (req, res, next) => {
 app.get('/articles/articleId/test', (req, res, next) => {
   res.status(500).send({ message: 'This an error response' });
 });
-/* Employees can view a specific gif post */
+/* Employees can view a specific gif post 
 app.get('/gifs/gifId', (req, res, next) => {
   jwt.verify(req.token, 'secretKey', (err, authData) => {
     if (err) {
@@ -370,7 +370,7 @@ app.get('/gifs/gifId', (req, res, next) => {
 });
 app.get('/gifs/gifId/test', (req, res, next) => {
   res.status(500).send({ message: 'This an error response' });
-});
+})*/
 
 // eslint-disable-next-line consistent-return
 
