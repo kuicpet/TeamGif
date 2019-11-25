@@ -19,6 +19,7 @@ CREATE TABLE gifs (
 CREATE TABLE articles (
     articleId SERIAL PRIMARY KEY,
     articleTitle VARCHAR(255),
+    article VARCHAR,
     date_created TIMESTAMP
     );   
 
