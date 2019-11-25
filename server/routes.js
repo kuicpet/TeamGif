@@ -437,9 +437,8 @@ router.get('/gifs/gitId/test', (req, res) => {
   res.status(400).send({ message: 'This is an error response' });
 });
 
-router.get('/', (req, res) => res.status(200).send({
-  status: 'success',
-  message: 'Welcome express app running',
-}));
+router.get('/', (req, res) => res.status(200).send(
+  'Welcome Express App running',
+));
 
 module.exports = router;
